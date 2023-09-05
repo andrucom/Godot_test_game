@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=9 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Label.gd" id="1_sampq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Button.gd" id="3_x8eor"]
 [ext_resource type="Script" path="res://Button2.gd" id="5_twbbm"]
 [ext_resource type="Script" path="res://version_var.gd" id="6_lkcva"]
+[ext_resource type="AudioStream" uid="uid://mbxanrmj4mqp" path="res://mx_Everyday.mp3" id="7_had62"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a4bms"]
 font_size = 71
@@ -93,6 +94,12 @@ offset_bottom = 646.0
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_lkcva")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel"]
+position = Vector2(565.525, 397)
+scale = Vector2(9.67272, 1)
+stream = ExtResource("7_had62")
+autoplay = true
 
 [connection signal="pressed" from="Panel/Button" to="Panel/Label3" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label2" method="_on_button_pressed"]
