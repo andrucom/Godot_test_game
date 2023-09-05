@@ -1,7 +1,5 @@
 extends Label
 
-var click = 0
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,10 +12,24 @@ func _process(delta):
 
 func _on_button_pressed():
 	
-	text = "hello world"
-	click+=1
-	if click > 3:
-		text = "dont click me"
-	if click > 5:
-		text = "Stop click me"
-	pass # Replace with function body.
+	text = "Привет мир"
+	g.click+=1
+	if g.click > 3:
+		text = "Не кликай на меня"
+	if g.click > 5:
+		text = "Не кликай на меня"
+	if g.click > 10:
+		text = "НЕ КЛИКАЙ НА МЕНЯ, сука..."
+	if g.click > 15:
+		text = "Ладно"
+	if g.click > 25:
+		text = "..."
+	if g.click > 35:
+		text = "Не надоело?"
+	if g.click > 45:
+		text = "Мама анархия...?"
+	if g.click > 55:
+		text = "Ну кликай, кликай умник..."
+	if g.click > 65:
+		text = "..."
+
