@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=11 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Label.gd" id="1_sampq"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://Button.gd" id="3_x8eor"]
 [ext_resource type="Script" path="res://Button2.gd" id="5_twbbm"]
 [ext_resource type="Script" path="res://version_var.gd" id="6_lkcva"]
-[ext_resource type="AudioStream" uid="uid://mbxanrmj4mqp" path="res://mx_Everyday.mp3" id="7_had62"]
+[ext_resource type="AudioStream" uid="uid://mbxanrmj4mqp" path="res://audio/mx_Everyday.mp3" id="7_6v6fw"]
+[ext_resource type="Texture2D" uid="uid://dukr3s128ucv3" path="res://picture/maxresdefault-1.jpg" id="8_jvn5n"]
+[ext_resource type="Script" path="res://button_mem.gd" id="9_47bma"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a4bms"]
 font_size = 71
@@ -26,7 +28,7 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Label3" type="Label" parent="Panel"]
+[node name="Label_count" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 676.0
 offset_top = 486.0
@@ -35,7 +37,7 @@ offset_bottom = 512.0
 text = "count:"
 script = ExtResource("1_eqbjt")
 
-[node name="Label2" type="Label" parent="Panel"]
+[node name="Label_varcount" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 732.0
 offset_top = 487.0
@@ -67,7 +69,7 @@ vertical_alignment = 1
 uppercase = true
 script = ExtResource("1_sampq")
 
-[node name="Button2" type="Button" parent="Panel"]
+[node name="Button_restart" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 545.0
 offset_top = 626.0
@@ -98,11 +100,18 @@ script = ExtResource("6_lkcva")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel"]
 position = Vector2(565.525, 397)
 scale = Vector2(9.67272, 1)
-stream = ExtResource("7_had62")
+stream = ExtResource("7_6v6fw")
 autoplay = true
 
-[connection signal="pressed" from="Panel/Button" to="Panel/Label3" method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button" to="Panel/Label2" method="_on_button_pressed"]
+[node name="button_mem" type="Sprite2D" parent="Panel"]
+position = Vector2(561.528, 258)
+scale = Vector2(0.511499, 0.397222)
+texture = ExtResource("8_jvn5n")
+script = ExtResource("9_47bma")
+
+[connection signal="pressed" from="Panel/Button" to="Panel/Label_count" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Label_varcount" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label" method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button2" to="Panel/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/button_mem" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button_restart" to="Panel/Button_restart" method="_on_pressed"]

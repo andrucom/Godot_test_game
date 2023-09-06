@@ -8,11 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	text = str(g.click)
 	pass
 
 
 func _on_button_pressed():
 	text="0"
-	if g.click > 0:
-		text = str(g.click)
+	
 

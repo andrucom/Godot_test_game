@@ -9,11 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
-
-func _on_pressed():
-	g.click
+	if g.click > -1:
+		text="Нажми на меня"
 	if g.click > 20:
 		text="Хватит"
 	if g.click > 25:
@@ -30,3 +27,9 @@ func _on_pressed():
 		text="STOP"
 	if g.click > 42:
 		text="Нажми на меня!"
+	pass
+
+
+func _on_pressed():
+	pass
+

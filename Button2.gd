@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
-	g.click=1
-	pass # Replace with function body.
+	g.click=0
+	
