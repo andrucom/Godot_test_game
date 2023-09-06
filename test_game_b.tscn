@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=13 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Label.gd" id="1_sampq"]
@@ -9,9 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://mbxanrmj4mqp" path="res://audio/mx_Everyday.mp3" id="7_6v6fw"]
 [ext_resource type="Texture2D" uid="uid://dukr3s128ucv3" path="res://picture/maxresdefault-1.jpg" id="8_jvn5n"]
 [ext_resource type="Script" path="res://button_mem.gd" id="9_47bma"]
+[ext_resource type="Script" path="res://Panel2.gd" id="10_lhar4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xm6cc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a4bms"]
-font_size = 71
+font_size = 60
+shadow_size = 10
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,36 +34,38 @@ offset_bottom = 648.0
 
 [node name="Label_count" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 676.0
-offset_top = 486.0
-offset_right = 725.0
-offset_bottom = 512.0
+offset_left = 534.551
+offset_top = 574.0
+offset_right = 583.551
+offset_bottom = 600.0
 text = "count:"
 script = ExtResource("1_eqbjt")
 
-[node name="Label_varcount" type="Label" parent="Panel"]
+[node name="Label_varcount" type="Label" parent="Panel/Label_count"]
 layout_mode = 0
-offset_left = 732.0
-offset_top = 487.0
-offset_right = 743.0
-offset_bottom = 513.0
+offset_left = 56.0
+offset_top = 1.0
+offset_right = 119.0
+offset_bottom = 27.0
 text = "0"
 script = ExtResource("2_jcurk")
 
 [node name="Button" type="Button" parent="Panel"]
+material = SubResource("CanvasItemMaterial_xm6cc")
 layout_mode = 0
-offset_left = 485.0
-offset_top = 458.0
-offset_right = 620.0
-offset_bottom = 521.0
+offset_left = 491.587
+offset_top = 457.0
+offset_right = 626.587
+offset_bottom = 520.0
 scale = Vector2(1.26812, 1.31071)
 text = "Нажми на меня"
 script = ExtResource("3_x8eor")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
+offset_left = 5.0
 offset_top = 79.0
-offset_right = 1152.0
+offset_right = 1147.0
 offset_bottom = 424.0
 auto_translate = false
 text = "Label"
@@ -71,10 +77,10 @@ script = ExtResource("1_sampq")
 
 [node name="Button_restart" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 545.0
-offset_top = 626.0
-offset_right = 616.0
-offset_bottom = 657.0
+offset_left = 545.542
+offset_top = 628.0
+offset_right = 616.542
+offset_bottom = 659.0
 scale = Vector2(0.720005, 0.639998)
 text = "Рестарт"
 script = ExtResource("5_twbbm")
@@ -109,9 +115,17 @@ scale = Vector2(0.511499, 0.397222)
 texture = ExtResource("8_jvn5n")
 script = ExtResource("9_47bma")
 
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 117.0
+script = ExtResource("10_lhar4")
+
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count" method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button" to="Panel/Label_varcount" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Label_count/Label_varcount" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/button_mem" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button_restart" to="Panel/Button_restart" method="_on_pressed"]
+[connection signal="gui_input" from="Panel2" to="Panel2" method="_on_gui_input"]

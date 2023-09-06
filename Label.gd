@@ -14,7 +14,7 @@ func _process(delta):
 	if g.click > 5:
 		text = "Не кликай на меня"
 	if g.click > 10:
-		text = "НЕ КЛИКАЙ НА МЕНЯ, сука..."
+		text = "НЕ КЛИКАЙ НА МЕНЯ..."
 	if g.click > 15:
 		text = "Ладно"
 	if g.click > 25:
@@ -27,7 +27,76 @@ func _process(delta):
 		text = "Ну кликай, кликай умник..."
 	if g.click > 65:
 		text = "..."
-
+	if g.click > 67:
+		text="Уолтер, убери от меня..."
+	if g.click > 69:
+		text="..."
+	if g.click > 80:
+		text="Почем опиум для народа?"
+	if g.click > 85:
+		text="..."
+	if g.click > 90:
+		text="https://youtu.be/dQw4w9WgXcQ?si=Opj64Slh6BSVbRSw"
+	if g.click > 95:
+		text="..."
+	if g.click > 100:
+		text="Это водка?"
+	if g.click > 105:
+		text="..."
+	if g.click > 110:
+		text="..."
+	if g.click > 115:
+		text="В дверь постучали..."
+	if g.click > 120:
+		text="- Это rezer, подумал bender"
+	if g.click > 125:
+		text="..."
+	if g.click > 130:
+		text="Ползи, донать и снова"
+	if g.click > 135:
+		text="..."
+	if g.click > 140:
+		text="Вы однажды спросили,\nчто делают в комнате 101."
+	if g.click > 142:
+		text="Я ответил, что вы сами знаете.\nЭто все знают."
+	if g.click > 145:
+		text="..."
+	if g.click > 150:
+		text="А теперь сделай рестарт\nИ обрати внимание на кнопку"
+	if g.click > 155:
+		text="..."
+	if g.click > 160:
+		text="Командовать парадом буду я!"
+	if g.click > 165:
+		text="..."
+	if g.click > 170:
+		text="ostap_bender"
+	if g.click > 175:
+		text="..."
+	if g.click > 180:
+		text="Брат за брата!"
+	if g.click > 185:
+		text="..."
+	if g.click > 190:
+		text="Не брат ты мне\nгнида черножопая"
+	if g.click > 195:
+		text="..."
+	if g.click > 200:
+		text="СЕМЬ ЗАПОВЕДЕЙ"
+	if g.click > 205:
+		text="..."
+	if g.click > 210:
+		text="Четыре ноги - хорошо.\nА две лучше!"
+	if g.click > 215:
+		text="..."
+	if g.click > 220:
+		text="Good Morning Vietnam"
+	if g.click > 225:
+		text="..."
+	if g.click > 230:
+		text="Буянов, где арена?"
+	if g.click > 235:
+		text="..."
 
 
 func _on_button_pressed():

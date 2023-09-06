@@ -27,8 +27,16 @@ func _process(delta):
 		text="STOP"
 	if g.click > 42:
 		text="Нажми на меня!"
-	pass
-
+	if g.click > 45:
+		text="!Жестче!"
+	if g.click > 50:
+		text=""
+	if g.click > 60:
+		text="Нажми на меня"
+	if g.click > 67:
+		text="Шлем!"
+	if g.click > 69:
+		text="Нажми на меня..."
 
 func _on_pressed():
 	pass
