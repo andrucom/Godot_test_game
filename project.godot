@@ -21,7 +21,7 @@ g="*res://new_script.gd"
 
 [display]
 
-window/size/viewport_width=1148
+window/size/viewport_width=1150
 window/size/resizable=false
 window/vsync/vsync_mode=0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=17 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Panel.gd" id="1_qfgqe"]
@@ -13,12 +13,13 @@
 [ext_resource type="Script" path="res://Panel2.gd" id="10_lhar4"]
 [ext_resource type="AudioStream" uid="uid://dry646xkavwco" path="res://audio/click.mp3" id="11_i1fa4"]
 [ext_resource type="Script" path="res://AudioClick.gd" id="11_vfhel"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xm6cc"]
+[ext_resource type="AudioStream" uid="uid://dl26fs4whr5ey" path="res://audio/click_button.mp3" id="13_vnuqt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a4bms"]
 font_size = 60
 shadow_size = 10
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xm6cc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,10 +39,10 @@ script = ExtResource("1_qfgqe")
 
 [node name="Label_count" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 534.551
-offset_top = 574.0
-offset_right = 583.551
-offset_bottom = 600.0
+offset_left = 551.537
+offset_top = 576.0
+offset_right = 600.537
+offset_bottom = 602.0
 text = "count:"
 script = ExtResource("1_eqbjt")
 
@@ -54,23 +55,11 @@ offset_bottom = 27.0
 text = "0"
 script = ExtResource("2_jcurk")
 
-[node name="Button" type="Button" parent="Panel"]
-material = SubResource("CanvasItemMaterial_xm6cc")
-layout_mode = 0
-offset_left = 491.587
-offset_top = 457.0
-offset_right = 626.587
-offset_bottom = 520.0
-scale = Vector2(1.26812, 1.31071)
-text = "Нажми на меня"
-script = ExtResource("3_x8eor")
-
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 79.0
-offset_right = 1147.0
-offset_bottom = 424.0
+offset_top = 88.0
+offset_right = 1149.0
+offset_bottom = 433.0
 auto_translate = false
 text = "Label"
 label_settings = SubResource("LabelSettings_a4bms")
@@ -78,16 +67,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 script = ExtResource("1_sampq")
-
-[node name="Button_restart" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 545.542
-offset_top = 628.0
-offset_right = 616.542
-offset_bottom = 659.0
-scale = Vector2(0.720005, 0.639998)
-text = "Рестарт"
-script = ExtResource("5_twbbm")
 
 [node name="version_text" type="Label" parent="Panel"]
 layout_mode = 0
@@ -107,21 +86,46 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_lkcva")
 
+[node name="Button" type="Button" parent="Panel"]
+material = SubResource("CanvasItemMaterial_xm6cc")
+layout_mode = 0
+offset_left = 490.588
+offset_top = 455.0
+offset_right = 625.588
+offset_bottom = 518.0
+scale = Vector2(1.26812, 1.31071)
+text = "Нажми на меня"
+script = ExtResource("3_x8eor")
+
+[node name="Button_restart" type="Button" parent="Panel"]
+offset_left = 551.537
+offset_top = 624.0
+offset_right = 622.537
+offset_bottom = 655.0
+scale = Vector2(0.720005, 0.639998)
+auto_translate = false
+text = "Рестарт"
+script = ExtResource("5_twbbm")
+
+[node name="button_mem" type="Sprite2D" parent="Panel"]
+visible = false
+position = Vector2(600.496, 256)
+scale = Vector2(0.511499, 0.397222)
+texture = ExtResource("8_jvn5n")
+script = ExtResource("9_47bma")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel"]
 position = Vector2(565.525, 397)
 scale = Vector2(9.67272, 1)
 stream = ExtResource("7_6v6fw")
 autoplay = true
 
-[node name="button_mem" type="Sprite2D" parent="Panel"]
-position = Vector2(561.528, 258)
-scale = Vector2(0.511499, 0.397222)
-texture = ExtResource("8_jvn5n")
-script = ExtResource("9_47bma")
-
 [node name="AudioClick" type="AudioStreamPlayer2D" parent="Panel"]
 stream = ExtResource("11_i1fa4")
 script = ExtResource("11_vfhel")
+
+[node name="Audioclickb" type="AudioStreamPlayer2D" parent="Panel"]
+stream = ExtResource("13_vnuqt")
 
 [node name="Panel2" type="Panel" parent="."]
 visible = false

@@ -39,5 +39,7 @@ func _process(delta):
 		text="Нажми на меня..."
 
 func _on_pressed():
+	
 	pass
+	
 
