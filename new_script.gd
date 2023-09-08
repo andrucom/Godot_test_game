@@ -1,5 +1,5 @@
 extends Node
 
 var click = 0
-var ver = "0.1.4"
+var ver = "0.1.5"
 

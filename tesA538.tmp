@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=15 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Panel.gd" id="1_qfgqe"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dukr3s128ucv3" path="res://picture/maxresdefault-1.jpg" id="8_jvn5n"]
 [ext_resource type="Script" path="res://button_mem.gd" id="9_47bma"]
 [ext_resource type="Script" path="res://Panel2.gd" id="10_lhar4"]
-[ext_resource type="AudioStream" uid="uid://dry646xkavwco" path="res://audio/click.mp3" id="11_i1fa4"]
 [ext_resource type="Script" path="res://AudioClick.gd" id="11_vfhel"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xm6cc"]
@@ -120,7 +119,6 @@ texture = ExtResource("8_jvn5n")
 script = ExtResource("9_47bma")
 
 [node name="AudioClick" type="AudioStreamPlayer2D" parent="Panel"]
-stream = ExtResource("11_i1fa4")
 script = ExtResource("11_vfhel")
 
 [node name="Panel2" type="Panel" parent="."]
@@ -130,7 +128,7 @@ offset_right = 235.0
 offset_bottom = 117.0
 script = ExtResource("10_lhar4")
 
-[connection signal="ready" from="Panel" to="Panel" method="_on_ready"]
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count/Label_varcount" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
