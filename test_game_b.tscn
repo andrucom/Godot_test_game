@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=20 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Panel.gd" id="1_qfgqe"]
@@ -16,6 +16,13 @@
 [ext_resource type="AudioStream" uid="uid://dl26fs4whr5ey" path="res://audio/click_button.mp3" id="13_vnuqt"]
 [ext_resource type="Script" path="res://Audioclickb.gd" id="14_16i4c"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3aeqn"]
+blend_mode = 3
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6v81n"]
+blend_mode = 4
+
 [sub_resource type="LabelSettings" id="LabelSettings_a4bms"]
 font_size = 60
 shadow_size = 10
@@ -31,6 +38,25 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00084, 1)
+
+[node name="Menu" type="Panel" parent="."]
+modulate = Color(0.45098, 0.490196, 0, 1)
+self_modulate = Color(0.054902, 0.0901961, 0.0980392, 1)
+top_level = true
+material = SubResource("CanvasItemMaterial_3aeqn")
+use_parent_material = true
+offset_right = 1152.0
+offset_bottom = 646.0
+script = ExtResource("10_lhar4")
+
+[node name="CheckButton" type="CheckButton" parent="Menu"]
+material = SubResource("CanvasItemMaterial_6v81n")
+layout_mode = 0
+offset_left = 664.0
+offset_top = 208.0
+offset_right = 708.0
+offset_bottom = 232.0
+scale = Vector2(2.5337, 2.6288)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -110,7 +136,6 @@ text = "Рестарт"
 script = ExtResource("5_twbbm")
 
 [node name="button_mem" type="Sprite2D" parent="Panel"]
-visible = false
 position = Vector2(600.496, 256)
 scale = Vector2(0.511499, 0.397222)
 texture = ExtResource("8_jvn5n")
@@ -131,13 +156,7 @@ stream = ExtResource("13_vnuqt")
 volume_db = 11.886
 script = ExtResource("14_16i4c")
 
-[node name="Panel2" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 235.0
-offset_bottom = 117.0
-script = ExtResource("10_lhar4")
-
+[connection signal="gui_input" from="Menu" to="Menu" method="_on_gui_input"]
 [connection signal="ready" from="Panel" to="Panel" method="_on_ready"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count/Label_varcount" method="_on_button_pressed"]
@@ -147,4 +166,3 @@ script = ExtResource("10_lhar4")
 [connection signal="pressed" from="Panel/Button" to="Panel/Audioclickb" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button_restart" to="Panel/Button_restart" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button_restart" to="Panel/Audioclickb" method="_on_button_restart_pressed"]
-[connection signal="gui_input" from="Panel2" to="Panel2" method="_on_gui_input"]
