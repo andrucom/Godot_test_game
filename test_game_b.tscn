@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=18 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Panel.gd" id="1_qfgqe"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dry646xkavwco" path="res://audio/click.mp3" id="11_i1fa4"]
 [ext_resource type="Script" path="res://AudioClick.gd" id="11_vfhel"]
 [ext_resource type="AudioStream" uid="uid://dl26fs4whr5ey" path="res://audio/click_button.mp3" id="13_vnuqt"]
+[ext_resource type="Script" path="res://Audioclickb.gd" id="14_16i4c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a4bms"]
 font_size = 60
@@ -98,6 +99,7 @@ text = "Нажми на меня"
 script = ExtResource("3_x8eor")
 
 [node name="Button_restart" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 551.537
 offset_top = 624.0
 offset_right = 622.537
@@ -126,6 +128,8 @@ script = ExtResource("11_vfhel")
 
 [node name="Audioclickb" type="AudioStreamPlayer2D" parent="Panel"]
 stream = ExtResource("13_vnuqt")
+volume_db = 11.886
+script = ExtResource("14_16i4c")
 
 [node name="Panel2" type="Panel" parent="."]
 visible = false
@@ -137,8 +141,10 @@ script = ExtResource("10_lhar4")
 [connection signal="ready" from="Panel" to="Panel" method="_on_ready"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count/Label_varcount" method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/button_mem" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Audioclickb" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button_restart" to="Panel/Button_restart" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Button_restart" to="Panel/Audioclickb" method="_on_button_restart_pressed"]
 [connection signal="gui_input" from="Panel2" to="Panel2" method="_on_gui_input"]
