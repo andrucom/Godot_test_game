@@ -97,6 +97,14 @@ func _process(delta):
 		text="Буянов, где арена?"
 	if g.click > 235:
 		text="..."
+	if g.click > 240:
+		text=" 'УДАЛИТЬ ПИЛЮГИНА' "
+	if g.click > 245:
+		text="..."
+	if g.click > 250:
+		text="Нового года \n НЕ БУДЕТ"
+	if g.click > 255:
+		text="..."
 
 
 func _on_button_pressed():
