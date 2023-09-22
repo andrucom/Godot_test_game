@@ -1,9 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://cv6i3y1ks8lx7"]
+[gd_scene load_steps=19 format=3 uid="uid://cv6i3y1ks8lx7"]
 
 [ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
 [ext_resource type="Script" path="res://Panel.gd" id="1_qfgqe"]
 [ext_resource type="Script" path="res://Label.gd" id="1_sampq"]
-[ext_resource type="Script" path="res://Label2.gd" id="2_jcurk"]
 [ext_resource type="Script" path="res://Button.gd" id="3_x8eor"]
 [ext_resource type="Script" path="res://Button2.gd" id="5_twbbm"]
 [ext_resource type="Script" path="res://version_var.gd" id="6_lkcva"]
@@ -40,11 +39,13 @@ grow_vertical = 2
 scale = Vector2(1.00084, 1)
 
 [node name="Menu" type="Panel" parent="."]
+visible = false
 modulate = Color(0.45098, 0.490196, 0, 1)
 self_modulate = Color(0.054902, 0.0901961, 0.0980392, 1)
 top_level = true
 material = SubResource("CanvasItemMaterial_3aeqn")
 use_parent_material = true
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 646.0
 script = ExtResource("10_lhar4")
@@ -73,15 +74,6 @@ offset_bottom = 602.0
 text = "count:"
 script = ExtResource("1_eqbjt")
 
-[node name="Label_varcount" type="Label" parent="Panel/Label_count"]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 1.0
-offset_right = 119.0
-offset_bottom = 27.0
-text = "0"
-script = ExtResource("2_jcurk")
-
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_top = 88.0
@@ -95,20 +87,13 @@ vertical_alignment = 1
 uppercase = true
 script = ExtResource("1_sampq")
 
-[node name="version_text" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 1000.0
-offset_top = 624.0
-offset_right = 1059.0
-offset_bottom = 650.0
-text = "Version:"
-
 [node name="version_var" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 1068.0
-offset_top = 623.0
-offset_right = 1151.0
-offset_bottom = 646.0
+offset_left = 1039.13
+offset_top = 624.0
+offset_right = 1122.13
+offset_bottom = 650.0
+text = "version:"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_lkcva")
@@ -159,7 +144,6 @@ script = ExtResource("14_16i4c")
 [connection signal="gui_input" from="Menu" to="Menu" method="_on_gui_input"]
 [connection signal="ready" from="Panel" to="Panel" method="_on_ready"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label_count" method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button" to="Panel/Label_count/Label_varcount" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Label" method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/button_mem" method="_on_button_pressed"]
