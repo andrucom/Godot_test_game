@@ -111,3 +111,7 @@ func _on_button_pressed():
 	g.click+=1
 
 
+
+
+func _on_line_edit_text_changed(new_text):
+	g.click = int(new_text)

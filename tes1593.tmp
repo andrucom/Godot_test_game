@@ -1,0 +1,188 @@
+[gd_scene load_steps=19 format=3 uid="uid://cv6i3y1ks8lx7"]
+
+[ext_resource type="Script" path="res://Label3.gd" id="1_eqbjt"]
+[ext_resource type="Script" path="res://Panel.gd" id="1_qfgqe"]
+[ext_resource type="Script" path="res://Label.gd" id="1_sampq"]
+[ext_resource type="Script" path="res://Button.gd" id="3_x8eor"]
+[ext_resource type="Script" path="res://Button2.gd" id="5_twbbm"]
+[ext_resource type="Script" path="res://version_var.gd" id="6_lkcva"]
+[ext_resource type="AudioStream" uid="uid://mbxanrmj4mqp" path="res://audio/mx_Everyday.mp3" id="7_6v6fw"]
+[ext_resource type="Texture2D" uid="uid://dukr3s128ucv3" path="res://picture/maxresdefault-1.jpg" id="8_jvn5n"]
+[ext_resource type="Script" path="res://button_mem.gd" id="9_47bma"]
+[ext_resource type="Script" path="res://Panel2.gd" id="10_lhar4"]
+[ext_resource type="AudioStream" uid="uid://dry646xkavwco" path="res://audio/click.mp3" id="11_i1fa4"]
+[ext_resource type="Script" path="res://AudioClick.gd" id="11_vfhel"]
+[ext_resource type="AudioStream" uid="uid://dl26fs4whr5ey" path="res://audio/click_button.mp3" id="13_vnuqt"]
+[ext_resource type="Script" path="res://Audioclickb.gd" id="14_16i4c"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3aeqn"]
+blend_mode = 3
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7u25u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a4bms"]
+font_size = 60
+shadow_size = 10
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xm6cc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.004
+anchor_bottom = 1.0
+offset_right = 4.40796
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00084, 1)
+
+[node name="Menu" type="Panel" parent="."]
+modulate = Color(0.45098, 0.490196, 0, 1)
+self_modulate = Color(0.054902, 0.0901961, 0.0980392, 1)
+top_level = true
+material = SubResource("CanvasItemMaterial_3aeqn")
+use_parent_material = true
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+script = ExtResource("10_lhar4")
+
+[node name="click_cheat" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 128.0
+offset_right = 581.0
+offset_bottom = 154.0
+text = "Укажите число кликов:"
+
+[node name="LineEdit" type="LineEdit" parent="Menu/click_cheat"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 211.0
+offset_right = 311.0
+offset_bottom = 31.0
+max_length = 17
+clear_button_enabled = true
+
+[node name="click_check" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 184.0
+offset_right = 584.0
+offset_bottom = 210.0
+text = "Звук кликов"
+
+[node name="b_click_check" type="CheckButton" parent="Menu/click_check"]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 188.0
+offset_bottom = 24.0
+
+[node name="sound_check" type="Label" parent="Menu"]
+offset_left = 512.0
+offset_top = 224.0
+offset_right = 616.0
+offset_bottom = 250.0
+text = "Музыка"
+
+[node name="b_sound_check" type="CheckButton" parent="Menu/sound_check"]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 156.0
+offset_bottom = 24.0
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_7u25u")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_qfgqe")
+
+[node name="Label_count" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 551.537
+offset_top = 576.0
+offset_right = 600.537
+offset_bottom = 602.0
+text = "count:"
+script = ExtResource("1_eqbjt")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 1149.0
+offset_bottom = 433.0
+auto_translate = false
+text = "Label"
+label_settings = SubResource("LabelSettings_a4bms")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("1_sampq")
+
+[node name="version_var" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1039.13
+offset_top = 624.0
+offset_right = 1122.13
+offset_bottom = 650.0
+text = "version:"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_lkcva")
+
+[node name="Button" type="Button" parent="Panel"]
+material = SubResource("CanvasItemMaterial_xm6cc")
+layout_mode = 0
+offset_left = 490.588
+offset_top = 455.0
+offset_right = 625.588
+offset_bottom = 518.0
+scale = Vector2(1.26812, 1.31071)
+text = "Нажми на меня"
+script = ExtResource("3_x8eor")
+
+[node name="Button_restart" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 551.537
+offset_top = 624.0
+offset_right = 622.537
+offset_bottom = 655.0
+scale = Vector2(0.720005, 0.639998)
+auto_translate = false
+text = "Рестарт"
+script = ExtResource("5_twbbm")
+
+[node name="button_mem" type="Sprite2D" parent="Panel"]
+position = Vector2(600.496, 256)
+scale = Vector2(0.511499, 0.397222)
+texture = ExtResource("8_jvn5n")
+script = ExtResource("9_47bma")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel"]
+position = Vector2(565.525, 397)
+scale = Vector2(9.67272, 1)
+stream = ExtResource("7_6v6fw")
+autoplay = true
+
+[node name="AudioClick" type="AudioStreamPlayer2D" parent="Panel"]
+stream = ExtResource("11_i1fa4")
+script = ExtResource("11_vfhel")
+
+[node name="Audioclickb" type="AudioStreamPlayer2D" parent="Panel"]
+stream = ExtResource("13_vnuqt")
+volume_db = 11.886
+script = ExtResource("14_16i4c")
+
+[connection signal="gui_input" from="Menu" to="Menu" method="_on_gui_input"]
+[connection signal="text_changed" from="Menu/click_cheat/LineEdit" to="Panel/Label" method="_on_line_edit_text_changed"]
+[connection signal="toggled" from="Menu/click_check/b_click_check" to="Panel/Audioclickb" method="_on_b_click_check_toggled"]
+[connection signal="ready" from="Panel" to="Panel" method="_on_ready"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Label_count" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Label" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/button_mem" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Audioclickb" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button_restart" to="Panel/Button_restart" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Button_restart" to="Panel/Audioclickb" method="_on_button_restart_pressed"]
