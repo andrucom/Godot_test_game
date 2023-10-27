@@ -87,6 +87,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ok2rk")
 button_pressed = true
 
 [node name="sound_check" type="Label" parent="Menu"]
+layout_mode = 0
 offset_left = 512.0
 offset_top = 224.0
 offset_right = 616.0
