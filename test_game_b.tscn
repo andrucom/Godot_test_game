@@ -43,6 +43,7 @@ grow_vertical = 2
 scale = Vector2(1.00084, 1)
 
 [node name="Menu" type="Panel" parent="."]
+visible = false
 modulate = Color(0.45098, 0.490196, 0, 1)
 self_modulate = Color(0.054902, 0.0901961, 0.0980392, 1)
 top_level = true
@@ -147,10 +148,10 @@ script = ExtResource("6_lkcva")
 [node name="Button" type="Button" parent="Panel"]
 material = SubResource("CanvasItemMaterial_xm6cc")
 layout_mode = 0
-offset_left = 490.588
-offset_top = 455.0
-offset_right = 625.588
-offset_bottom = 518.0
+offset_left = 495.584
+offset_top = 456.0
+offset_right = 630.584
+offset_bottom = 519.0
 scale = Vector2(1.26812, 1.31071)
 text = "Нажми на меня"
 script = ExtResource("3_x8eor")

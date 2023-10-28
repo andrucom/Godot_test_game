@@ -23,7 +23,8 @@ g="*res://new_script.gd"
 [display]
 
 window/size/viewport_width=1150
-window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 window/vsync/vsync_mode=0
 
 [input]
