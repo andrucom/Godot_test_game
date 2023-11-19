@@ -105,8 +105,12 @@ func _process(delta):
 		text="Нового года \n НЕ БУДЕТ"
 	if g.click > 255:
 		text="..."
-
-
+	if g.click > 260:
+		text="Dadaskis, почему\nты покинул нас?"
+	if g.click > 265:
+		text="..."
+		
+		
 func _on_button_pressed():
 	g.click+=1
 
